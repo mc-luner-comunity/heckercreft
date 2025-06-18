@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerCreft | Minecraft Sunucusu</title>
+    <style>
+        :root {
+            --hacker-green: #00ff41;
+            --dark-bg: #0d0208;
+            --menu-bg: #0a0a0a;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.discordapp.com/attachments/1353114807355838565/1384846216797487196/cb89e432d3acaf075b9c920ba3a24780.jpg?ex=6853ea0b&is=6852988b&hm=a267edd673923877cdb4062e0e7848731f4ee96a227507716924e571038e630e&') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Courier New', monospace;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 2, 8, 0.85);
+            z-index: -1;
+        }
+        
+        /* Menü Stili */
+        .menu {
+            background: var(--menu-bg);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--hacker-green);
+            box-shadow: 0 0 15px var(--hacker-green);
+        }
+        
+        .logo {
+            color: var(--hacker-green);
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--hacker-green);
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--hacker-green);
+            border-color: var(--hacker-green);
+            text-shadow: 0 0 5px var(--hacker-green);
+        }
+        
+        /* Sayfa İçerikleri */
+        .page {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Ana Sayfa */
+        #home-page {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .home-content {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--hacker-green);
+            border-radius: 5px;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px var(--hacker-green);
+        }
+        
+        /* Durum Sayfası */
+        #status-page {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--hacker-green);
+            border-radius: 5px;
+            padding: 25px;
+            width: 85%;
+            max-width: 500px;
+            margin: 30px auto;
+            box-shadow: 0 0 20px var(--hacker-green);
+            text-align: center;
+        }
+        
+        .status {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--hacker-green);
+            text-shadow: 0 0 10px var(--hacker-green);
+        }
+        
+        .server-info {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .online { color: var(--hacker-green); }
+        .offline { color: #ff5555; }
+        
+        #last-check {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        
+        /* Oyun İçi Görseller */
+        .game-screenshot {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid var(--hacker-green);
+            margin: 15px auto;
+            display: block;
+        }
+        
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .nav-links {
+                margin-top: 10px;
+            }
+            
+            .page {
+                padding: 10px;
+            }
+        }
+        .discordsunucu {
+            color: #00ff41;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menü -->
+    <div class="menu">
+        <div class="logo">HackerCreft</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home-page">Ana Sayfa</a>
+            <a href="#" class="nav-link" data-page="status-page">Durum</a>
+                        <a href="#" class="nav-link active" data-page="discord">discord</a>
+        </div>
+    </div>
+
+    <!-- Ana Sayfa -->
+    <div id="home-page" class="page" style="display: block;">
+        <div class="home-content">
+            <h1>HackerCreft Sunucusuna Hoş Geldiniz</h1>
+            <p>En iyi Minecraft hacker deneyimi için hazırlanmış özel sunucumuz!</p>
+            
+            
+            <div style="margin-top: 30px;">
+                <h3>Öne Çıkan Özellikler</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li>Özel hacker eklentileri</li>
+                    <li>Adil oyun ortamı</li>
+                    <li>Düzenli etkinlikler</li>
+                    <li>7/24 aktif yönetim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Durum Sayfası -->
+    <div id="status-page" class="page">
+        <div class="status">🎮 <span id="status-text">HackerCreft</span></div>
+        <div class="server-info">
+            <div>IP: <strong>HackerCraft.aternos.me</strong></div>
+            <div id="player-count"></div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <h3>Şu Anda Sunucuda</h3>
+            <div id="current-players" style="min-height: 100px; border: 1px dashed var(--hacker-green); padding: 10px;">
+                <!-- Oyuncu listesi buraya gelecek -->
+            </div>
+        </div>
+        
+        <div id="last-check"></div>
+    </div>
+        <!-- Ana Sayfa -->
+    <div id="discord" class="page" style="display: block;">
+        <div class="discord">
+            <h1>DİSCORD sunucumuza katılmayı unutmayın</h1>
+            <p><a target="blank" href="https://discord.gg/pmF5ZMewY2" class="discordsunucu">sunucu linki</a> işte discord sunucumuz</p>
+            
+            
+            <div style="margin-top: 30px;">
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sayfa geçişleri
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Tüm bağlantılardan active classını kaldır
+                document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+                // Tüm sayfaları gizle
+                document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+                
+                // Tıklanan bağlantıya active classını ekle
+                this.classList.add('active');
+                // İlgili sayfayı göster
+                document.getElementById(this.dataset.page).style.display = 'block';
+            });
+        });
+
+        // API kontrol fonksiyonu
+        const checkServer = async () => {
+            try {
+                const apiUrl = `https://api.mcsrvstat.us/2/HackerCraft.aternos.me?t=${Date.now()}`;
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                const statusText = document.getElementById("status-text");
+                const playerCount = document.getElementById("player-count");
+                const currentPlayers = document.getElementById("current-players");
+                const lastCheck = document.getElementById("last-check");
+
+                const isReallyOnline = data.online && 
+                                     !data.motd?.clean?.some(line => line.includes("offline"));
+                
+                if (isReallyOnline) {
+                    statusText.innerHTML = '<span class="online">AKTİF</span>';
+                    playerCount.textContent = `Oyuncular: ${data.players?.online || 0}/${data.players?.max || 20}`;
+                    
+                    // Oyuncu listesi
+                    if (data.players && data.players.list) {
+                        currentPlayers.innerHTML = data.players.list.map(player => 
+                            `<div>• ${player}</div>`).join('');
+                    } else {
+                        currentPlayers.innerHTML = "<div>Oyuncu listesi gizli</div>";
+                    }
+                } else {
+                    statusText.innerHTML = '<span class="offline">OFFLINE</span>';
+                    playerCount.textContent = '';
+                    currentPlayers.innerHTML = "<div>Sunucu şu anda kapalı</div>";
+                }
+                
+                lastCheck.textContent = `Son kontrol: ${new Date().toLocaleTimeString()}`;
+            } catch (error) {
+                console.error("API hatası:", error);
+                document.getElementById("status-text").innerHTML = '<span class="offline">HATA</span>';
+            }
+        };
+
+        // İlk kontrolü yap ve her 15 saniyede bir tekrarla
+        checkServer();
+        setInterval(checkServer, 15000);
+    </script>
+</body>
+</html>
